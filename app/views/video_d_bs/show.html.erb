@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong> title:</strong>
+  <%= @video_db. title %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @video_db.year %>
+</p>
+
+<p>
+  <strong>Actor:</strong>
+  <%= @video_db.actor %>
+</p>
+
+<p>
+  <strong>Maingenere:</strong>
+  <%= @video_db.maingenere %>
+</p>
+
+<p>
+  <strong>Genere:</strong>
+  <%= @video_db.genere %>
+</p>
+
+<%= link_to 'Edit', edit_video_db_path(@video_db) %> |
+<%= link_to 'Back', video_dbs_path %>
