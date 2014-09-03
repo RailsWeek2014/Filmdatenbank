@@ -16,7 +16,7 @@ Filmdatenbank
   - Registrierte User können Kommentare unter Filmen sehen, erstellen und ihre eigenen Kommentare auch editieren.
 
 
- - Optional:
+- Optional:
 
   - Hinzufügen von weiteren Infos:  
     - Schauspieler, 
