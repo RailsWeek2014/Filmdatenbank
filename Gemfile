@@ -40,3 +40,15 @@ gem 'spring',        group: :development
 
 #User Authentifizierung
 gem 'devise'
+
+#Nutzerrollen Verwaltung
+gem 'cancancan'
+
+#Bilder Upload
+gem 'carrierwave'
+
+#Mit Tags arbeiten
+gem 'acts-as-taggable-on'
+
+#Suche
+gem 'ransack'
