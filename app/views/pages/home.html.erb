@@ -2,6 +2,7 @@
 
 <% if user_signed_in? %>
   <p><%= link_to "Meine Filme", movies_path %></p>
+  <br><br>
   <p><%= link_to "Abmelden", destroy_user_session_url, method: :delete %></p>
 <% else %>
   <p>
@@ -10,5 +11,15 @@
   <%= link_to "Benutzerkonto erstellen", new_user_registration_path %>
   </p>
 <% end %>
-<h1>VideoDB</h1>
+<h3>Zuletzt hinzugefuegt:</h3>
 
+<ul>
+  <% @movies.each do |movie| %>
+    <li>
+      <%= movie.title %>
+    </li>
+  <% end %>
+</ul>
+<% if !user_signed_in? %>
+  <h4><%= link_to "Komplette Datenbank einsehen", "/movies/1" %></h4> <!--TODO Korrekter Link-->
+<% end %>

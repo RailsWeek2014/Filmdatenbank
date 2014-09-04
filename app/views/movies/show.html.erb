@@ -1,0 +1,14 @@
+<dl class="dl-horizontal">
+  <dt>Title</dt>
+  <dd><%= @movie.title %></dd>
+  <dt>Jahr</dt>
+  <dd><%= @movie.year %></dd>
+  <dt>HauptGenre</dt>
+  <dd><%= @movie.m_genre %></dd>
+  <dt>Genre</dt>
+  <dd><%= @movie.genre %></dd>
+  <dt>Schauspieler</dt>
+  <dd><%= @movie.actor %></dd>
+</dl>
+
+<h4><%= link_to "Weiteren Film hinzufuegen", "new" %></h4> <!--TODO Film hinzufuegen nur Moderatoren zugaenglich machen-->
