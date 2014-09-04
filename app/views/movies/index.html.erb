@@ -12,6 +12,8 @@
     <div id="movie_<%= movie.id %>" class="panel-collapse collapse out">
       <div class="panel-body">
         <%= render partial: "movie", locals: {movie: movie} %>
+        <br>
+        <p>(<%= link_to "Edit", edit_movie_path(movie) %>)</p>
       </div>
     </div>
   </div>
