@@ -21,10 +21,10 @@ Filmdatenbank
   - Hinzufügen von weiteren Infos:  
     - Schauspieler 
     - Regisseur 
-    - Hauptgenere 
-    - Genere (Unterschied Hauptgenere / Genere: Actionfilm mit vielen Comedyelementen => Hauptgenere: Action Genere: Action, Comedy ==> Film: Kick-Ass)
+    - Hauptgenre 
+    - Genre (Unterschied Hauptgenre / Genre: Actionfilm mit vielen Comedyelementen => Hauptgenre: Action Genre: Action, Comedy ==> Film: Kick-Ass)
   - Suchen nach weiteren Elementen:
-    - Hauptgenere 
-    - Genere 
+    - Hauptgenre 
+    - Genre 
     - Darsteller 
     - Regisseur

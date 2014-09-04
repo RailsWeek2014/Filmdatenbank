@@ -1,1 +1,32 @@
 <h2>Film hinzufuegen</h2>
+
+<%= form_for @movie do |f| %>
+  <p>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %>
+  </p>
+
+  <p>
+  <%= f.label :year %><br>
+  <%= f.text_field :year %>
+  </p>
+
+  <p>
+  <%= f.label :actor %><br>
+  <%= f.text_field :actor %>
+  </p>
+
+  <p>
+  <%= f.label :m_genre %>(Hauptgenre)<br>
+  <%= f.text_field :m_genre %>
+  </p>
+
+  <p>
+  <%= f.label :genre %>(Alle Genre die auf den Film zutreffen)<br>
+  <%= f.text_field :genre %>
+  </p>
+
+  <p>
+  <%= f.submit %> oder <button type="reset" value="reset">Reset</button>
+  </p>
+<% end %>
