@@ -1,9 +1,12 @@
-<h1>Pages#home</h1>
+<% @title = "Home" %>
+<h1>VideoDB</h1>
 <% if user_signed_in? %>
-  <p><%= link_to "Meine Bookmarks", bookmarks_path %></p>
+  <p><%= link_to "Meine Filme", movies_path %></p>
   <p><%= link_to "Abmelden", destroy_user_session_url, method: :delete %></p>
 <% else %>
-  <p><%= link_to "Benutzerkonto erstellen", new_user_registration_path %></p>
-  <p>oder</p>
-  <p><%= link_to "Anmelden", new_user_session_path %></p>
+  <p>
+  <%= link_to "Anmelden", new_user_session_path %>
+   oder  
+  <%= link_to "Benutzerkonto erstellen", new_user_registration_path %>
+  </p>
 <% end %>

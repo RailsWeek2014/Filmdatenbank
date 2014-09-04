@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  get 'movies/edit'
+
+  get 'movies/new'
+
+  devise_for :users
   root to: "pages#home"
 
-  resources :video_dbs
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

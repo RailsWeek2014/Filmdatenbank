@@ -40,3 +40,26 @@ gem 'spring',        group: :development
 
 #User Authentifizierung
 gem 'devise'
+
+#Nutzerrollen Verwaltung
+gem 'cancancan'
+
+#Bilder Upload
+gem 'carrierwave'
+
+#Mit Tags arbeiten
+gem 'acts-as-taggable-on'
+
+#Suche
+gem 'ransack'
+
+#Verbesserte Error-Anzeige
+gem 'better_errors'
+
+#Ruby Konsole in Error-Anzeige
+gem "binding_of_caller"
+
+#Bootstrap + Less for easy CSS usage
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
