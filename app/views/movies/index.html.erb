@@ -1,5 +1,19 @@
 <h2>Komplette Datenbank
+<div class="panel-group" id="accordion">
 <% @movies.each do |movie| %>
-  <%= render partial: "movie", locals: {movie: movie} %>
-  <hr>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#movie_<%= movie.id %>">
+          <%= movie.title %>
+        </a>
+      </h4>
+    </div>
+    <div id="movie_<%= movie.id %>" class="panel-collapse collapse out">
+      <div class="panel-body">
+        <%= render partial: "movie", locals: {movie: movie} %>
+      </div>
+    </div>
+  </div>
 <% end %>
+</div>
