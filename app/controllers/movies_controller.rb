@@ -4,11 +4,6 @@ class MoviesController < ApplicationController
     @movie= Movie.new
   end
 
-  def create
-    @movie = Movie.new(movie_params)
-    @movie.save
-    redirect_to @movie
-  end
 
   def show
     @movie = Movie.find(params[:id])
@@ -16,6 +11,20 @@ class MoviesController < ApplicationController
 
   def edit
 
+  end
+
+  def search
+
+  end
+
+  def create
+    @movie = Movie.new(movie_params)
+    @movie.save
+    redirect_to @movie
+  end
+
+  def index
+    @movies = Movie.all
   end
 
   private
