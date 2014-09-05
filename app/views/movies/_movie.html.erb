@@ -1,12 +1,36 @@
-<dl class="dl-horizontal">
-  <dt>Title</dt>
-  <dd><%= movie.title %></dd>
-  <dt>Jahr</dt>
-  <dd><%= movie.year %></dd>
-  <dt>HauptGenre</dt>
-  <dd><%= movie.m_genre %></dd>
-  <dt>Genre</dt>
-  <dd><%= movie.genre %></dd>
-  <dt>Schauspieler</dt>
-  <dd><%= movie.actor %></dd>
-</dl>
+<div class="row">
+  <div class="col-md-6">
+    <dl class="dl-horizontal">
+      <dt>Title</dt>
+      <dd><%= movie.title %></dd>
+      <dt>Jahr</dt>
+      <dd><%= movie.year %></dd>
+      <dt>HauptGenre</dt>
+      <dd><%= movie.m_genre %></dd>
+      <dt>Genre</dt>
+      <dd><%= movie.genre %></dd>
+      <dt>Schauspieler</dt>
+      <dd><%= movie.actor %></dd>
+    </dl>
+  </div>
+  <div class="col-md-6">
+    <p>
+
+      <button class="btn btn-link" data-toggle="modal" data-target="#bigPicture">
+        <%= image_tag("#{movie.avatar.url(:thumb)}") %>
+      </button>
+
+      <div class="modal fade sm" id="bigPicture" tabindex="-1" role="dialog" aria-labelledby="bigPicture" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body" align="center">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+              <%= image_tag("#{movie.avatar.url}") %>
+            </div>            
+          </div>
+        </div>
+      </div>
+
+    </p>
+  </div> 
+</div>

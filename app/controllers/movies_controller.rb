@@ -1,3 +1,5 @@
+require 'carrierwave/processing/rmagick'
+
 class MoviesController < ApplicationController
 
   def new
@@ -37,11 +39,11 @@ class MoviesController < ApplicationController
   end
   
   def index
-    @movies = Movie.all
+    @movies = Movie.all.order("title ASC")
   end
 
   private
     def movie_params
-      params.require(:movie).permit(:title, :year, :actor, :m_genre, :genre)
+      params.require(:movie).permit(:title, :year, :actor, :m_genre, :genre, :avatar, :remote_avatar_url)
     end
 end

@@ -63,3 +63,6 @@ gem "binding_of_caller"
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
+
+#Bildveraeitung von Uploads
+gem 'rmagick'

@@ -1,16 +1,5 @@
 <% @title = "Home" %>
 
-<% if user_signed_in? %>
-  <p><%= link_to "Meine Filme", movies_path %></p>
-  <br><br>
-  <p><%= link_to "Abmelden", destroy_user_session_url, method: :delete %></p>
-<% else %>
-  <p>
-  <%= link_to "Anmelden", new_user_session_path %>
-   oder  
-  <%= link_to "Benutzerkonto erstellen", new_user_registration_path %>
-  </p>
-<% end %>
 <!--Zeigt die letzten 5 Filme die zur DB hinzugefuegt wurden.-->
 <h3>Zuletzt hinzugefuegt:</h3>
 

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :ratings
+
+  resources :comments
+
   devise_for :users
   root to: "pages#home"
   resources :movies
