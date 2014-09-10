@@ -1,4 +1,5 @@
 <h2>Komplette Datenbank</h2>
+<p>(Zum Komentieren bitte zum jeweiligen Film wechseln!)</p>
 <div class="panel-group" id="accordion">
 <% @movies.each do |movie| %>
   <div class="panel panel-default">
@@ -14,8 +15,11 @@
       <% @movie = movie %>
         <%= render partial: "movie", locals: {movie: movie} %>
         <br>
-        <% if user_signed_in? && current_user.is_moderator? %>
-        <p>(<%= link_to "Edit", edit_movie_path(movie) %>)</p>
+          <p>
+          (<%= link_to "Zum Film", movie_path(movie) %>)
+          <% if user_signed_in? && current_user.is_moderator? %>
+            (<%= link_to "Edit", edit_movie_path(movie) %>)
+          </p>
         <% end %>
       </div>
     </div>

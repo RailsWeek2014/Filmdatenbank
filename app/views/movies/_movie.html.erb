@@ -17,7 +17,7 @@
 
         <% if user_signed_in? %>
           <dt>Eigenes Rating</dt>
-            <% if !current_user.has_rated? movie %> <!-- user.ratings, where movie:movies -->
+            <% if !current_user.has_rated? movie %> 
               <dd> <%= render partial: 'ratings/form', locals: {movie: movie} %></dd>
             <% else %>
               <dd><p>Bereits Bewertet</p></dd>
@@ -30,11 +30,11 @@
     <div class="col-md-6">
       <p>  
         
-        <button class="btn btn-link" data-toggle="modal" data-target="#bigPicture">
+        <button class="btn btn-link" data-toggle="modal" data-target="#bigPicture_<%= movie.id %>">
           <%= image_tag("#{movie.avatar.url(:thumb)}") %>
         </button>
   
-        <div class="modal fade sm" id="bigPicture" tabindex="-1" role="dialog" aria-labelledby="bigPicture" aria-hidden="true">
+        <div class="modal fade sm" id="bigPicture_<%= movie.id %>" tabindex="-1" role="dialog" aria-labelledby="bigPicture" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-body" align="center">

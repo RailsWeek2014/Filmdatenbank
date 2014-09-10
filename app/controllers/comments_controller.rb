@@ -10,11 +10,13 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.json
   def show
+    redirect_to '/' unless user_signed_in?
     @comment = Comment.find(params[:id])
   end
 
   # GET /comments/new
   def new
+    redirect_to '/' unless user_signed_in?
     @comment = Comment.new
     @comment.movie = Movie.find(params[:movie_id])
   end
@@ -31,7 +33,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @comment.movie, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
