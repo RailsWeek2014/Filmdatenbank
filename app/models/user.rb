@@ -3,9 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable#, :confirmable
-
-  belongs_to :role
-  before_create :set_default_role
+         
   has_many :listings, through: :movie_lists, source: :movie
   has_many :comments
   has_many :commentations, through: :comments, source: :movie
@@ -21,10 +19,6 @@ class User < ActiveRecord::Base
   end
   
   private
-  def set_default_role
-    self.role ||= Role.find_by_name('registered')
-  end
-
   # def user_params
   #   params.require(:user).permit(:email, :username, :password)
   # end

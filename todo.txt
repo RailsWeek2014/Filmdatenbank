@@ -1,0 +1,22 @@
+(x)Filme zur Datenbank hinzufuegen
+(x)Filme editieren
+(x)Filme einzeln anzeigen
+(x)Alle Filme anzeigen
+(x)Filmplakate hochladen
+(x)Filmplakate Filmen zuweisen (Thumbnail / Normal)
+(x)User registrierung
+(x)User einloggen
+(x)Nur Moderatoren koennen Filme aendern oder hinzufuegen
+(x)Registrierte User koennen Filme bewerten
+(x)Eigene sowie gemittelte Bewertung wird unter einem Film angezeigt
+(x)Registrierte User koennen Kommentare unter Filmen sehen
+(x)Eigene Kommentare schreiben und editieren
+(o)Es kann nach Filmen gesucht werden
+(o)Suchparameter sind Name, Jahr und gemittelte Bewertung
+(o)Registrierte User koennen eigene Filmauswahl treffen
+(o)Personalisierte Filme anzeigen
+(o)Bewertung ist nur freigeschaltet wenn der User den Film mit Besitz oder gesehen markiert hat
+
+
+Bugs:
+(x)In der Datenbank-Komplettansicht kann man nur den Avatar des ersten Films vergroessern

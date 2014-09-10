@@ -41,9 +41,6 @@ gem 'spring',        group: :development
 #User Authentifizierung
 gem 'devise'
 
-#Nutzerrollen Verwaltung
-gem 'cancancan'
-
 #Bilder Upload
 gem 'carrierwave'
 

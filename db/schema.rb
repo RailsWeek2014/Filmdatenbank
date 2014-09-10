@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140910134907) do
+ActiveRecord::Schema.define(version: 20140910151539) do
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -59,12 +59,6 @@ ActiveRecord::Schema.define(version: 20140910134907) do
   add_index "ratings", ["user_id", "movie_id"], name: "index_ratings_on_user_id_and_movie_id", unique: true
   add_index "ratings", ["user_id"], name: "index_ratings_on_user_id"
 
-  create_table "roles", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -104,8 +98,6 @@ ActiveRecord::Schema.define(version: 20140910134907) do
     t.boolean  "moderator",              default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "role"
-    t.integer  "role_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
