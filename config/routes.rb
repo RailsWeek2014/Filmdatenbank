@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
-  resources :ratings
 
-  resources :comments
-
-  devise_for :users
   root to: "pages#home"
-  resources :movies
+  devise_for :users
+  resources :movies do
+    resources :ratings
+  end
+
+  resources :ratings
+  resources :comments
 
 
   # The priority is based upon order of creation: first created -> highest priority.

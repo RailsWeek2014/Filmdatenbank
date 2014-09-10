@@ -13,4 +13,6 @@
 <!--Zeigt einen Link zur kompletten DB wenn der User nicht eingeloggt ist-->
 <% if !user_signed_in? %>
   <h4><%= link_to "Komplette Datenbank einsehen", movies_path %></h4> <!--TODO Korrekter Link-->
+<% elsif current_user.is_moderator? %>
+  <h4><%= link_to "Neuen Film hinzufuegen", "new" %><h4>
 <% end %>

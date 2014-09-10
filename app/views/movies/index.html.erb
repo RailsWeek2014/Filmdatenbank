@@ -11,9 +11,12 @@
     </div>
     <div id="movie_<%= movie.id %>" class="panel-collapse collapse out">
       <div class="panel-body">
+      <% @movie = movie %>
         <%= render partial: "movie", locals: {movie: movie} %>
         <br>
+        <% if user_signed_in? && current_user.is_moderator? %>
         <p>(<%= link_to "Edit", edit_movie_path(movie) %>)</p>
+        <% end %>
       </div>
     </div>
   </div>

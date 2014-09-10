@@ -2,7 +2,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
+      t.string :email,              null: false, unique: true, default: ""
       t.string :username,           null: false, unique: true, default: ""
       t.string :encrypted_password, null: false, default: ""
 
@@ -32,7 +32,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.datetime :locked_at
 
       ## User-Rollenverwaltung
-      t.boolean  :moderator
+      t.boolean  :moderator, default: false
 
 
       t.timestamps

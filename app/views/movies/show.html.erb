@@ -1,2 +1,18 @@
 <%= render partial: "movie", locals: {movie: @movie} %>
-<h4><%= link_to "Weiteren Film hinzufuegen", "new" %></h4> <!--TODO Film hinzufuegen nur Moderatoren zugaenglich machen-->
+<%= link_to "Neuer Kommentar", new_comment_path(movie_id: @movie.id) %>
+<br><br>
+<% @movie.comments.each do |c| %>
+<hr>
+  <div class="row">
+    <div class="col-md-4">
+      <dl class="dl-vertical">
+      <%= if user_signed_in? && c.user == current_user%>
+        <dt>User: <%= c.user.username %></dt>
+        <dd><%= c.created_at %></dd>
+        <dt>Comment:</dt>
+        <dd><%= view_comment(c.content) %></dd>
+      <% end %>
+      </dl>
+    </div>
+  </div>
+<% end %>

@@ -10,11 +10,13 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.json
   def show
+    @comment = Comment.find(params[:id])
   end
 
   # GET /comments/new
   def new
     @comment = Comment.new
+    @comment.movie = Movie.find(params[:movie_id])
   end
 
   # GET /comments/1/edit
@@ -25,6 +27,7 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
+    @comment.user = current_user
 
     respond_to do |format|
       if @comment.save
@@ -69,6 +72,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(: user, :content)
+      params.require(:comment).permit(:movie_id, :content)
     end
 end

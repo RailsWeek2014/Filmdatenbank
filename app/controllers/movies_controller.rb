@@ -3,15 +3,18 @@ require 'carrierwave/processing/rmagick'
 class MoviesController < ApplicationController
 
   def new
+    redirect_to '/' unless user_signed_in? && current_user.is_moderator?
     @movie= Movie.new
   end
 
 
   def show
     @movie = Movie.find(params[:id])
+    @rating = @movie.ratings.find_by(user_id: current_user) || Rating.new(movie: @movie)
   end
 
   def edit
+    redirect_to '/' unless user_signed_in? && current_user.is_moderator?
     @movie = Movie.find(params[:id])
   end
 
@@ -20,6 +23,7 @@ class MoviesController < ApplicationController
   end
 
   def create
+    redirect_to '/' unless user_signed_in? && current_user.is_moderator?
     @movie = Movie.new(movie_params)
     
     if @movie.save
