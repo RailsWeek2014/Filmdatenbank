@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :movie_lists
+
   root to: "pages#home"
   devise_for :users
   resources :movies do

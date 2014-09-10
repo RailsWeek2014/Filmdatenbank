@@ -1,22 +1,10 @@
 <%= render partial: "movie", locals: {movie: @movie} %>
 <br><br>
-  <h4>Kommentare:</h4>
-  <% if user_signed_in? %>
-    <%= link_to "Neuer Kommentar", new_comment_path(movie_id: @movie.id) %>
-    <% @movie.comments.each do |c| %>
-    <hr>
-      <div class="row">
-        <div class="col-md-4">
-          <dl class="dl-vertical">
-    
-            <dt>User: <%= c.user.username %></dt>
-            <dd><%= c.created_at %></dd>
-            <dt>Comment:</dt>
-            <dd><p style= "word-wrap: break-word;"><%= c.content %></p></dd>
-          </dl>
-        </div>
-      </div>
-    <% end %>
-  <% else %>
-    <p>Zum ansehen bitte <%= link_to "Einloggen", user_session_path %> oder <%= link_to "Registrieren", new_user_registration_path %>.</p>
-  <% end %>
+<h4>Kommentare:</h4>
+
+<% if user_signed_in? %>
+  <%= link_to "Neuer Kommentar", new_comment_path(movie_id: @movie.id) %>
+  <%= render 'comment', locals: {movie: @movie} %>
+<% else %>
+  <p>Zum ansehen bitte <%= link_to "Einloggen", user_session_path %> oder <%= link_to "Registrieren", new_user_registration_path %>.</p>
+<% end %>

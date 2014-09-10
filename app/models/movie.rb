@@ -1,6 +1,6 @@
 class Movie < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
-  has_and_belongs_to_many :users
+  has_many :listers, through:  :movie_lists, source: :user
   has_many :comments
   has_many :commentators, through: :comments, source: :user
   has_many :ratings

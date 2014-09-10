@@ -1,14 +1,14 @@
-<p id="notice"><%= notice %></p>
+<% @Comment.movie.each do |c| %>
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      <dl class="dl-vertical">
 
-<p>
-  <strong> user:</strong>
-  <%= @comment.user.username %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @comment.content %>
-</p>
-
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+        <dt>User: <%= c.user.username %></dt>
+        <dd><%= c.created_at %></dd>
+        <dt>Comment:</dt>
+        <dd><p style= "word-wrap: break-word;"><%= c.content %></p></dd>
+      </dl>
+    </div>
+  </div>
+<% end %>

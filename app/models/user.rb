@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   belongs_to :role
   before_create :set_default_role
-  has_and_belongs_to_many :movies
+  has_many :listings, through: :movie_lists, source: :movie
   has_many :comments
   has_many :commentations, through: :comments, source: :movie
   has_many :ratings
