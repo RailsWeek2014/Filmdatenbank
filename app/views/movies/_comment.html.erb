@@ -9,7 +9,7 @@
         <dt>Comment:</dt>
         <dd><p style= "word-wrap: break-word;"><%= c.content %></p></dd>
       </dl>
-        <% if user_signed_in? && (c.user == current_user) %>
+        <% if user_signed_in? && (c.user == current_user) || current_user.is_moderator? %>
           <p>
           (<%= link_to "Bearbeiten", edit_comment_path(c) %>) oder
           (<%= link_to "Loeschen", comment_path(c), method: :delete, data: {confirm: 'Sicher?'} %>)

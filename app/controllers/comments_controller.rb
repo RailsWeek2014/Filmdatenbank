@@ -72,7 +72,7 @@ class CommentsController < ApplicationController
   private
 
     def has_permission?
-      user_signed_in? && (@comment.user == current_user)
+      (user_signed_in? && (@comment.user == current_user)) || current_user.is_moderator?
     end
 
     def permission_error
