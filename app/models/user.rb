@@ -18,9 +18,4 @@ class User < ActiveRecord::Base
   def has_rated? movie
     movie.raters.include? self
   end
-  
-  private
-  # def user_params
-  #   params.require(:user).permit(:email, :username, :password)
-  # end
 end

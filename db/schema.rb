@@ -27,7 +27,8 @@ ActiveRecord::Schema.define(version: 20140911134720) do
   create_table "movie_lists", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "[:movie_id, :user_id]"
+    t.string   "movie_id"
+    t.string   "user_id"
   end
 
   create_table "movies", force: true do |t|

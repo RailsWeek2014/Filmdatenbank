@@ -2,28 +2,28 @@
 <p>(Zum Kommentieren bitte zum jeweiligen Film wechseln!)</p>
 <%= render partial: 'search' %> 
 <div class="panel-group" id="accordion">
-<% @movies.each do |movie| %>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#movie_<%= movie.id %>">
-          <%= movie.title %>
-        </a>
-      </h4>
-    </div>
-    <div id="movie_<%= movie.id %>" class="panel-collapse collapse out">
-      <div class="panel-body">
-      <% @movie = movie %>
-        <%= render partial: "movie", locals: {movie: movie} %>
-        <br>
-          <p>
-          (<%= link_to "Zum Film", movie_path(movie) %>)
-          <% if user_signed_in? && current_user.is_moderator? %>
-            (<%= link_to "Edit", edit_movie_path(movie) %>)
-          </p>
-        <% end %>
+  <% @movies.each do |movie| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#movie_<%= movie.id %>">
+            <%= movie.title %>
+          </a>
+        </h4>
+      </div>
+      <div id="movie_<%= movie.id %>" class="panel-collapse collapse out">
+        <div class="panel-body">
+        <% @movie = movie %>
+          <%= render partial: "movie", locals: {movie: movie} %>
+          <br>
+            <p>
+            (<%= link_to "Zum Film", movie_path(movie) %>)
+            <% if user_signed_in? && current_user.is_moderator? %>
+              (<%= link_to "Edit", edit_movie_path(movie) %>)
+            <% end %>
+            </p>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 </div>

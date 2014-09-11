@@ -53,7 +53,6 @@ gem 'ransack'
 #Verbesserte Error-Anzeige
 gem 'better_errors'
 gem 'quiet_assets'
-
 #Ruby Konsole in Error-Anzeige
 gem "binding_of_caller"
 

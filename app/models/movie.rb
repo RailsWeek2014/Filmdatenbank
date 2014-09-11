@@ -8,16 +8,15 @@ class Movie < ActiveRecord::Base
   has_many :ratings
   has_many :raters, through: :ratings, source: :user
 
-  validates :title, presence: true, :uniqueness => true #Nicht Threadsicher --> In der DB loesen!!
+  validates :title, presence: true
   validates :year, presence: true
 
-  def average_rating
+  def averagerating
     sum = 0
 
     ratings.each do |r|
       sum += r.rating
-    end
-    
+    end    
     ratings.empty? ? 0.0 : sum.to_f / ratings.size
   end
 end

@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #User anlegen beim Datenbank erstellen
-User.create! email: 'dennislichtenthaeler@t-online.de', username: 'Gamy', password: '12345678', moderator: true
+User.create! email: 'test1@test.de', username: 'Gamy', password: '12345678', moderator: true
 User.create! email: 'test@test1.de', username: 'TestUser', password: '12345678'
 
 #Film anlegen beim Datenbank erstellen

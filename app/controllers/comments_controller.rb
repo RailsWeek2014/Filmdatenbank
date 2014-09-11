@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   def show
-    redirect_to '/' unless user_signed_in?
+    permission_error unless user_signed_in?
     set_comment
   end
 
@@ -15,57 +15,54 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
-      redirect_to '/' unless has_permission?
+      permission_error unless has_permission?
       set_comment
   end
 
   # POST /comments
   # POST /comments.json
   def create
-    if user_signed_in?
-      @comment = Comment.new(comment_params)
-      @comment.user = current_user
-  
-        respond_to do |format|
-          if @comment.save
-            format.html { redirect_to @comment.movie, notice: 'Comment was successfully created.' }
-            format.json { render :show, status: :created, location: @comment }
-          else
-            format.html { render :new }
-            format.json { render json: @comment.errors, status: :unprocessable_entity }
-          end
+    redirect_to '/' unless user_signed_in?
+    
+    @comment = Comment.new(comment_params)
+    @comment.user = current_user
+
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to @comment.movie, notice: 'Comment was successfully created.' }
+        format.json { render :show, status: :created, location: @comment }
+      else
+        format.html { render :new }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
-    else permission_error
     end
   end
 
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
   def update
-    if has_permission?
-      respond_to do |format|
-        if @comment.update(comment_params)
-          format.html { redirect_to @comment.movie, notice: 'Comment was successfully updated.' }
-          format.json { render :show, status: :ok, location: @comment }
-        else
-          format.html { render :edit }
-          format.json { render json: @comment.errors, status: :unprocessable_entity }
-        end
+    permission_error unless has_permission?
+
+    respond_to do |format|
+      if @comment.update(comment_params)
+        format.html { redirect_to @comment.movie, notice: 'Kommentar erfolgreich aktualisiert.' }
+        format.json { render :show, status: :ok, location: @comment }
+      else
+        format.html { render :edit }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
-    else permission_error
     end
   end
 
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
-    if has_permission?
-      @comment.destroy
-      respond_to do |format|
-        format.html { redirect_to @comment.movie, notice: 'Comment was successfully destroyed.' }
-        format.json { head :no_content }
-      end
-    else permission_error
+    permission_error unless has_permission?
+    
+    @comment.destroy
+    respond_to do |format|
+      format.html { redirect_to @comment.movie, notice: 'Kommentar erfolgreich geloescht.' }
+      format.json { head :no_content }
     end
   end
 
@@ -76,7 +73,7 @@ class CommentsController < ApplicationController
     end
 
     def permission_error
-      redirect_to @comment.movie, alert: 'No Permission!'
+      redirect_to @comment.movie, alert: 'Keine erforderlichen Rechte!'
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_comment

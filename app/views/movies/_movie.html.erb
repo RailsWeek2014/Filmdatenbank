@@ -13,7 +13,7 @@
         <dt>Schauspieler</dt>
         <dd><%= movie.actor %></dd>
         <dt>Rating</dt>
-        <dd><%= movie.average_rating %></dd>
+        <dd><%= movie.averagerating %></dd>
 
         <% if user_signed_in? %>
           <dt>Eigenes Rating</dt>
@@ -47,12 +47,11 @@
 
       </p>
     </div> 
-  </div>
+ </div>
+<!-- 
     <dl class="dl-horizontal">
-      <dt>Hab Ich gesehen</dt>
-      <dd><input type="checkbox"</dd>
-      
-      <dt>Will Ich sehen</dt>
-      <dd><input type="checkbox"></dd>
+      <dt><%# link_to "Hab Ich gesehen", movie_lists_path, method: 'post', locals: {movie: movie} %></dt>
+      <dt><%# link_to "Will Ich sehen", movie_lists_path, method: 'post', locals: {movie: movie} %></dt>
     </dl>
+-->
 </div>
