@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable#, :confirmable
          
+  has_many :movies
   has_many :listings, through: :movie_lists, source: :movie
   has_many :comments
   has_many :commentations, through: :comments, source: :movie

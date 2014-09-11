@@ -11,8 +11,8 @@
 (x)Eigene sowie gemittelte Bewertung wird unter einem Film angezeigt
 (x)Registrierte User koennen Kommentare unter Filmen sehen
 (x)Eigene Kommentare schreiben und editieren
-(o)Es kann nach Filmen gesucht werden
-(o)Suchparameter sind Name, Jahr und gemittelte Bewertung
+(x)Es kann nach Filmen gesucht werden
+(x)Suchparameter sind Name, Jahr und Genre  --gemittelte Bewertung
 (o)Registrierte User koennen eigene Filmauswahl treffen
 (o)Personalisierte Filme anzeigen
 (o)Bewertung ist nur freigeschaltet wenn der User den Film mit Besitz oder gesehen markiert hat
@@ -20,3 +20,4 @@
 
 Bugs:
 (x)In der Datenbank-Komplettansicht kann man nur den Avatar des ersten Films vergroessern
+(o)Sign_Up/In harter redirect zu 127.0.0.1/    bei Rating-Submit ebenfalls.

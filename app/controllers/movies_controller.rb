@@ -43,7 +43,9 @@ class MoviesController < ApplicationController
   end
   
   def index
-    @movies = Movie.all.order("title ASC")
+    @q = Movie.search(params[:q])
+    @q.sorts = 'title ASC'
+    @movies = @q.result
   end
 
   private

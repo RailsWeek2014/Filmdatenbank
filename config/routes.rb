@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  resources :movie_lists
+  
 
   root to: "pages#home"
   devise_for :users
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :ratings
   resources :comments
+  resources :movie_lists
 
 
   # The priority is based upon order of creation: first created -> highest priority.
